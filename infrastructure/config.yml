@@ -1,0 +1,10 @@
+cloud_provider: "aws"
+services:
+  - name: chatbot
+    port: 5005
+  - name: marketing
+    port: 8080
+  - name: dashboard
+    port: 8501
+monitoring:
+  alert_email: "admin@example.com"
