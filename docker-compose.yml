@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - GENERIC_TIMEZONE=Africa/Lagos
+
+  rasa:
+    image: rasa/rasa:latest
+    ports:
+      - "5005:5005"
+
+  huginn:
+    image: huginn/huginn
+    ports:
+      - "3000:3000"
+
+  mautic:
+    image: mautic/mautic
+    ports:
+      - "8080:80"
