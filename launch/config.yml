@@ -1,0 +1,13 @@
+pricing_tiers:
+  - name: Free
+    price: 0
+    features: ["Basic chatbot", "Weekly newsletter"]
+  - name: Premium
+    price: 50
+    features: ["Advanced workflows", "Data reports", "Priority support"]
+  - name: Enterprise
+    price: 200
+    features: ["Custom automation", "Dedicated AI agents", "Full analytics"]
+
+demo_environment: "launch/demo/"
+funnel_storage: "launch/funnel.csv"
