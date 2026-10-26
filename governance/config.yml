@@ -1,0 +1,17 @@
+policies:
+  - name: "Data Access Policy"
+    rule: "Only authorized roles can access client data"
+  - name: "Billing Policy"
+    rule: "Invoices must be approved before sending"
+  - name: "Community Policy"
+    rule: "Moderation required for flagged posts"
+
+roles:
+  - name: "Admin"
+    permissions: ["read_all", "write_all", "approve_billing"]
+  - name: "Manager"
+    permissions: ["read_clients", "approve_billing"]
+  - name: "User"
+    permissions: ["read_own"]
+
+audit_log: "governance/audit.csv"
