@@ -1,0 +1,23 @@
+name: Daily Data Report
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # Every day at 8 AM
+  workflow_dispatch:
+
+jobs:
+  run-data-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pandas pyyaml
+      - name: Run scraper
+        run: python data_pipeline/scraper.py
+      - name: Generate report
+        run: python data_pipeline/report_generator.py
