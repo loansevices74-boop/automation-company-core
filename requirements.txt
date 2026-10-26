@@ -1,7 +1,16 @@
-langchain
-openai
-rasa
-huginn
-n8n
-scrapy
-pandas
+# Core UI framework
+streamlit==1.39.0
+
+# Data handling
+pandas==2.2.2
+numpy==1.26.4
+
+# Config & parsing
+pyyaml==6.0.2
+
+# Networking
+requests==2.32.3
+
+# Optional extras (used in some pillars)
+matplotlib==3.9.2
+plotly==5.24.1
