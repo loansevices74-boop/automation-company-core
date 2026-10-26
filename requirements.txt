@@ -1,0 +1,7 @@
+langchain
+openai
+rasa
+huginn
+n8n
+scrapy
+pandas
