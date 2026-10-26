@@ -1,0 +1,9 @@
+tests:
+  - name: Landing Page Headline
+    variant_a: "Automate your business today!"
+    variant_b: "Save time with smart automation!"
+  - name: Email Subject Line
+    variant_a: "Your weekly automation tip"
+    variant_b: "Boost productivity with automation"
+
+performance_storage: "growth/performance.csv"
