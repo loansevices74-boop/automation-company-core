@@ -1,0 +1,8 @@
+ideas:
+  - "AI-driven customer sentiment analysis"
+  - "Automated compliance reporting"
+  - "Voice-enabled chatbot"
+  - "Predictive billing alerts"
+
+prototype_storage: "innovation/prototypes.csv"
+innovation_log: "innovation/innovation_log.txt"
