@@ -1,0 +1,17 @@
+health_metrics:
+  - metric: "Login frequency"
+    weight: 0.4
+  - metric: "Feature usage"
+    weight: 0.3
+  - metric: "Support tickets"
+    weight: 0.3
+
+churn_threshold: 0.5
+
+engagement_actions:
+  - condition: "low_health"
+    action: "Send personalized check‑in email"
+  - condition: "high_health"
+    action: "Invite to referral program"
+
+output: "customer_success/report.csv"
