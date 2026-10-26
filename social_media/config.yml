@@ -1,0 +1,13 @@
+platforms:
+  - name: twitter
+    api_key: ${TWITTER_API_KEY}
+    api_secret: ${TWITTER_API_SECRET}
+  - name: mastodon
+    api_url: "https://mastodon.social"
+    access_token: ${MASTODON_TOKEN}
+
+posts:
+  - schedule: "daily"
+    content: "Automation Tip of the Day: Save time with workflows!"
+  - schedule: "weekly"
+    content: "Check out our new automation services!"
