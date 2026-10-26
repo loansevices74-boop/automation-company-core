@@ -1,0 +1,14 @@
+integrations:
+  - name: Slack
+    api_url: "https://slack.com/api/chat.postMessage"
+    token: ${SLACK_TOKEN}
+  - name: Trello
+    api_url: "https://api.trello.com/1/cards"
+    key: ${TRELLO_KEY}
+    token: ${TRELLO_TOKEN}
+  - name: Zapier
+    webhook_url: ${ZAPIER_WEBHOOK}
+
+marketplaces:
+  - name: GitHub Marketplace
+  - name: AWS Marketplace
