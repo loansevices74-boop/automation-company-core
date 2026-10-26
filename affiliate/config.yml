@@ -1,0 +1,4 @@
+company_name: "Automation Company"
+commission_rate: 0.10   # 10% commission
+affiliate_storage: "affiliate/affiliates.csv"
+referral_log: "affiliate/referrals.csv"
