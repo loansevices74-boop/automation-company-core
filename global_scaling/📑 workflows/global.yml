@@ -1,0 +1,25 @@
+name: Global Scaling Automation
+
+on:
+  schedule:
+    - cron: "0 4 * * MON"   # Every Monday at 4 AM
+  workflow_dispatch:
+
+jobs:
+  run-global-scaling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Run localization
+        run: python global_scaling/localization.py
+      - name: Run currency manager
+        run: python global_scaling/currency_manager.py
+      - name: Run compliance checker
+        run: python global_scaling/compliance_regional.py
