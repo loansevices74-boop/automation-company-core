@@ -1,0 +1,25 @@
+name: Knowledge Management Automation
+
+on:
+  schedule:
+    - cron: "0 14 * * WED"   # Every Wednesday at 2 PM
+  workflow_dispatch:
+
+jobs:
+  run-knowledge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pandas pyyaml
+      - name: Run FAQ manager
+        run: python knowledge/faq_manager.py
+      - name: Run doc indexer
+        run: python knowledge/doc_indexer.py
+      - name: Run training portal
+        run: python knowledge/training_portal.py
