@@ -1,0 +1,5 @@
+company_name: "Automation Company"
+currency: "USD"
+default_rate: 100
+invoice_output: "invoices/"
+payment_log: "billing/payments.csv"
