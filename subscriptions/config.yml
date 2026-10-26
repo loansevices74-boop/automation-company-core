@@ -1,0 +1,12 @@
+company_name: "Automation Company"
+plans:
+  - name: Free
+    features: ["Basic chatbot", "Weekly newsletter"]
+    price: 0
+  - name: Premium
+    features: ["Advanced workflows", "Data reports", "Priority support"]
+    price: 50
+  - name: Enterprise
+    features: ["Custom automation", "Dedicated AI agents", "Full analytics"]
+    price: 200
+storage: "subscriptions/clients.csv"
