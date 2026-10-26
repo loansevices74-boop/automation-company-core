@@ -1,0 +1,5 @@
+backup_storage: "backups/"
+compliance_rules:
+  - rule: "Client data must be encrypted"
+  - rule: "Invoices must be retained for 5 years"
+  - rule: "Community feedback anonymized"
