@@ -1,0 +1,16 @@
+failover_servers:
+  - name: "Primary"
+    url: "https://primary.example.com"
+  - name: "Backup"
+    url: "https://backup.example.com"
+
+redundancy_checks:
+  - service: "CRM"
+    replicas: 3
+  - service: "Billing"
+    replicas: 2
+
+disaster_recovery_plan:
+  - step: "Restore backups"
+  - step: "Switch DNS to backup server"
+  - step: "Notify clients"
