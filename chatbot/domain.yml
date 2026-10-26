@@ -1,0 +1,17 @@
+intents:
+  - greet
+  - goodbye
+  - ask_service
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day."
+  utter_service:
+    - text: "We provide automation services like workflow bots, marketing automation, and AI agents."
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_service
