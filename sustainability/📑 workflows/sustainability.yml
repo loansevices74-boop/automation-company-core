@@ -1,0 +1,25 @@
+name: Sustainability Automation
+
+on:
+  schedule:
+    - cron: "0 3 * * SUN"   # Every Sunday at 3 AM
+  workflow_dispatch:
+
+jobs:
+  run-sustainability:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Run energy tracker
+        run: python sustainability/energy_tracker.py
+      - name: Run carbon calculator
+        run: python sustainability/carbon_calculator.py
+      - name: Run compliance checker
+        run: python sustainability/compliance_green.py
