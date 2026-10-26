@@ -1,0 +1,3 @@
+tasks_storage: "productivity/tasks.csv"
+reminders_storage: "productivity/reminders.csv"
+performance_storage: "productivity/performance.csv"
