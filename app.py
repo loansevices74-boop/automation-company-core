@@ -47,19 +47,19 @@ if choice == "Overview":
         "Status": [1]*27
     }).set_index("Pillars"))
 
-# Example template for each pillar
+# Example page: Customer Success
 elif choice == "Customer Success":
     st.title("Customer Success Automation")
     st.write("Health scoring, churn prediction, proactive engagement.")
 
-    # Example chart
+    # Chart
     data = pd.DataFrame({
         "Week": ["Week 1", "Week 2", "Week 3", "Week 4"],
         "Health Score": [0.7, 0.6, 0.8, 0.9]
     })
     st.line_chart(data.set_index("Week"))
 
-    # Example logs
+    # Logs
     logs = pd.DataFrame({
         "Client": ["Alpha", "Beta", "Gamma"],
         "Action": ["Check-in email", "Referral invite", "Churn alert"],
@@ -67,11 +67,11 @@ elif choice == "Customer Success":
     })
     st.table(logs)
 
-    # Example control
+    # Control
     if st.button("Trigger Engagement"):
         st.success("Engagement workflow executed!")
 
-# Repeat similar blocks for other pillars
+# Example page: Marketing Automation
 elif choice == "Marketing Automation":
     st.title("Marketing Automation")
     st.write("Campaigns, funnels, social media, affiliate growth.")
@@ -80,4 +80,13 @@ elif choice == "Marketing Automation":
         "Leads": [120, 150, 180, 220]
     }).set_index("Month"))
 
-elif choice == "Analytics & AI Insights
+# Example page: Analytics & AI Insights
+elif choice == "Analytics & AI Insights":
+    st.title("Analytics & AI Insights")
+    st.write("Predictive dashboards, personalization, knowledge management.")
+    st.bar_chart(pd.DataFrame({
+        "Metric": ["Engagement", "Retention", "Conversion"],
+        "Score": [85, 78, 92]
+    }).set_index("Metric"))
+
+# Add similar interactive blocks for the remaining pillars...
