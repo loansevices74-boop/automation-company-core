@@ -1,0 +1,25 @@
+name: Employee Productivity Automation
+
+on:
+  schedule:
+    - cron: "0 15 * * MON"   # Every Monday at 3 PM
+  workflow_dispatch:
+
+jobs:
+  run-productivity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pandas pyyaml
+      - name: Run task manager
+        run: python productivity/task_manager.py
+      - name: Run reminder system
+        run: python productivity/reminder_system.py
+      - name: Run performance tracker
+        run: python productivity/performance_tracker.py
