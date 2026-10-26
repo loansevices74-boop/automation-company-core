@@ -1,0 +1,5 @@
+campaign_name: Welcome Campaign
+steps:
+  - trigger: new_signup
+    action: send_email
+    template: "Welcome to Automation Company! We’ll help you automate everything."
