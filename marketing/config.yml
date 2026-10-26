@@ -1,0 +1,6 @@
+email_provider: smtp
+smtp_host: smtp.gmail.com
+smtp_port: 587
+smtp_user: ${SMTP_USER}
+smtp_pass: ${SMTP_PASS}
+default_sender: "automation-company@example.com"
