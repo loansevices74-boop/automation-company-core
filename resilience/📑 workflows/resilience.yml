@@ -1,0 +1,25 @@
+name: Resilience Automation
+
+on:
+  schedule:
+    - cron: "0 1 * * SAT"   # Every Saturday at 1 AM
+  workflow_dispatch:
+
+jobs:
+  run-resilience:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install requests pyyaml
+      - name: Run failover check
+        run: python resilience/backup_failover.py
+      - name: Run redundancy checker
+        run: python resilience/redundancy_checker.py
+      - name: Run disaster recovery plan
+        run: python resilience/disaster_recovery.py
