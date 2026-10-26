@@ -1,0 +1,17 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+- intent: ask_service
+  examples: |
+    - what services do you offer?
+    - tell me about your company
+    - what can you automate?
