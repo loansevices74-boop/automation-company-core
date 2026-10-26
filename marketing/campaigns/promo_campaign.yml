@@ -1,0 +1,5 @@
+campaign_name: Promo Campaign
+steps:
+  - trigger: special_offer
+    action: send_email
+    template: "Get 20% off our premium automation workflows this week!"
