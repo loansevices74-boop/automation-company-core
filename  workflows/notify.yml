@@ -1,0 +1,14 @@
+name: Notify Admin
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline", "CD Pipeline"]
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification
+        run: echo "Automation workflow completed successfully!"
