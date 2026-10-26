@@ -1,0 +1,12 @@
+rules:
+  - name: "Dashboard Personalization"
+    condition: "active_clients > 10"
+    action: "Show advanced analytics"
+  - name: "Email Personalization"
+    condition: "plan == 'Premium'"
+    action: "Send productivity tips"
+  - name: "Community Personalization"
+    condition: "feedback_sentiment == 'positive'"
+    action: "Invite to ambassador program"
+
+output: "personalization/recommendations.csv"
