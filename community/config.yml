@@ -1,0 +1,7 @@
+platforms:
+  - name: discourse
+    api_url: "https://community.example.com"
+    api_key: ${DISCOURSE_API_KEY}
+    api_user: "automation-bot"
+
+feedback_storage: "community/feedback.csv"
