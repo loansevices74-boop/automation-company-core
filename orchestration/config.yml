@@ -1,0 +1,21 @@
+services:
+  - name: chatbot
+    path: "chatbot/"
+  - name: marketing
+    path: "marketing/"
+  - name: data_pipeline
+    path: "data_pipeline/"
+  - name: billing
+    path: "billing/"
+  - name: crm
+    path: "crm/"
+  - name: dashboard
+    path: "dashboard/"
+  - name: subscriptions
+    path: "subscriptions/"
+  - name: social_media
+    path: "social_media/"
+  - name: affiliate
+    path: "affiliate/"
+  - name: community
+    path: "community/"
