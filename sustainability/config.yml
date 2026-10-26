@@ -1,0 +1,21 @@
+energy_sources:
+  - name: "Cloud Servers"
+    usage_kwh: 1200
+  - name: "Office Equipment"
+    usage_kwh: 300
+
+carbon_factors:
+  - source: "Cloud Servers"
+    factor: 0.4   # kg CO2 per kWh
+  - source: "Office Equipment"
+    factor: 0.2
+
+green_compliance:
+  - region: EU
+    rule: "Energy efficiency directive"
+  - region: US
+    rule: "EPA green compliance"
+  - region: NG
+    rule: "NESREA environmental standards"
+
+output: "sustainability/report.txt"
