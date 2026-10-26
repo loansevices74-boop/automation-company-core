@@ -1,0 +1,3 @@
+faq_storage: "knowledge/faqs.csv"
+docs_storage: "knowledge/docs_index.csv"
+training_storage: "knowledge/training.csv"
