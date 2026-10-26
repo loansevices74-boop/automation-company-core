@@ -1,0 +1,5 @@
+campaign_name: Newsletter Campaign
+steps:
+  - trigger: weekly
+    action: send_email
+    template: "Here’s your weekly automation tip!"
