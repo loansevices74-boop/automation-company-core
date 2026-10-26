@@ -1,0 +1,25 @@
+name: Launch Strategy Automation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 10 * * MON"   # Every Monday at 10 AM
+
+jobs:
+  run-launch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pandas pyyaml
+      - name: Show pricing
+        run: python launch/pricing_manager.py
+      - name: Deploy demo
+        run: python launch/demo_deployer.py
+      - name: Run funnel
+        run: python launch/funnel.py
