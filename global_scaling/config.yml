@@ -1,0 +1,21 @@
+languages:
+  - en
+  - fr
+  - es
+  - zh
+
+currencies:
+  - USD
+  - EUR
+  - NGN
+  - GBP
+
+regional_compliance:
+  - region: EU
+    rule: "GDPR data protection"
+  - region: US
+    rule: "CCPA privacy compliance"
+  - region: NG
+    rule: "NDPR data regulation"
+
+output: "global_scaling/global_report.txt"
