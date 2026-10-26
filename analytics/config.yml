@@ -1,0 +1,8 @@
+sources:
+  - crm: "crm/client_data.csv"
+  - billing: "billing/payments.csv"
+  - marketing: "marketing/campaigns/"
+  - community: "community/feedback.csv"
+  - affiliate: "affiliate/referrals.csv"
+
+insights_output: "analytics/insights.txt"
