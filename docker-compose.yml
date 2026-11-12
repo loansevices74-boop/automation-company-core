@@ -1,24 +1,36 @@
-version: '3.8'
+version: "3.8"
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: streamlit run app.py --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      AGENT_STEP_DELAY_SECONDS: "0"
+    depends_on:
+      - n8n
+
   n8n:
-    image: n8nio/n8n
+    image: n8nio/n8n:1.67.1
     ports:
       - "5678:5678"
     environment:
-      - GENERIC_TIMEZONE=Africa/Lagos
+      GENERIC_TIMEZONE: Africa/Lagos
 
   rasa:
-    image: rasa/rasa:latest
+    image: rasa/rasa:3.6.20
     ports:
       - "5005:5005"
 
   huginn:
-    image: huginn/huginn
+    image: huginn/huginn:latest
     ports:
       - "3000:3000"
 
   mautic:
-    image: mautic/mautic
+    image: mautic/mautic:5-apache
     ports:
       - "8080:80"
