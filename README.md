@@ -1,21 +1,30 @@
-# Automation Company Core
+# B2B Automation Company Core
 
-This repository contains the foundational setup for a fully automated company leveraging open-source tools, AI agents, and GitHub Actions.
+Phase 1 foundation for a productized B2B automation service.
 
-## Features
-- Workflow automation with n8n and Huginn
-- Customer support bots with Rasa
-- Marketing automation with Mautic
-- AI agents powered by LangChain
-- Automated deployment via Docker and GitHub Actions
+## Current capabilities
 
-## Getting Started
-1. Clone the repo: `git clone https://github.com/<your-org>/automation-company-core.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run with Docker: `docker-compose up`
+- Streamlit administrator console
+- SQLite-backed lead storage
+- Structured lead qualification
+- Approval-first outreach workflow boundary
+- Basic pipeline metrics
+- Unit tests for qualification and persistence
 
-## Contributing
-Pull requests are welcome. For major changes, open an issue first to discuss what you’d like to change.
+## Run locally
 
-## License
-This project is licensed under the MIT License.
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+python -m unittest discover -s tests -p 'test_*.py'
+```
+
+Set `AUTOMATION_DB_PATH` to choose a different SQLite database location. Do not commit credentials or customer data.
+
+## Initial plans
+
+- Starter: $299/month
+- Growth: $799/month
+- Managed: $1,499/month
+
+These are commercial targets, not guaranteed revenue. Outreach, publishing, billing, refunds, and production changes require explicit administrator controls.
