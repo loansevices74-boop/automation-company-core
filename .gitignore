@@ -1,16 +1,20 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
+*.py[cod]
 
-# Docker
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Local runtime data
+*.db
+*.sqlite
+*.sqlite3
+logs/
+output/
+
+# Docker and OS files
 *.log
 *.pid
-
-# Node
-node_modules/
-
-# Misc
 .DS_Store
