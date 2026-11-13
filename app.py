@@ -2,6 +2,9 @@ import streamlit as st
 
 from core.qualification import qualify_lead
 from core.store import Lead, LeadStore
+from marketing.engine import build_content_calendar, campaign_metrics
+from social_media.workflow import approve_draft, create_draft
+from datetime import date
 
 st.set_page_config(page_title="B2B Automation Company", layout="wide")
 st.title("B2B Automation Company")
@@ -9,12 +12,15 @@ st.caption("Administrator console: review, approve, and measure automation")
 
 store = LeadStore()
 leads = store.list()
+qualified = sum(row["status"] == "qualified" for row in leads)
+customers = sum(row["status"] == "won" for row in leads)
+metrics = campaign_metrics(len(leads), qualified, customers, customers * 799)
 
 cols = st.columns(4)
 cols[0].metric("Leads", len(leads))
-cols[1].metric("Qualified", sum(row["status"] == "qualified" for row in leads))
-cols[2].metric("Customers", sum(row["status"] == "won" for row in leads))
-cols[3].metric("Target MRR", "$5,000")
+cols[1].metric("Qualified", qualified)
+cols[2].metric("Customers", customers)
+cols[3].metric("Target gap", f"${metrics['target_gap']:,.0f}")
 
 with st.sidebar:
     st.header("Add a lead")
@@ -47,6 +53,11 @@ if score_submitted:
         st.warning(result.next_action)
     except ValueError as error:
         st.error(str(error))
+
+st.subheader("Automated marketing calendar")
+calendar = build_content_calendar(date.today(), 7)
+st.dataframe(calendar, use_container_width=True, hide_index=True)
+st.caption("All marketing content is generated as a draft and requires administrator approval before publication.")
 
 st.subheader("Lead pipeline")
 if leads:
