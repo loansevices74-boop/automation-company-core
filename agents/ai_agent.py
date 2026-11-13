@@ -1,24 +1,19 @@
-# agents/ai_agent.py
+"""Minimal base agent used by the administrator automation console."""
+from __future__ import annotations
 
-import time
 
 class AIAgent:
-    def __init__(self, name="Automation Agent"):
+    def __init__(self, name: str = "Automation Agent") -> None:
         self.name = name
-        self.logs = []
+        self.logs: list[str] = []
 
-    def run(self):
-        # Simulate agent workflow
+    def run(self) -> list[str]:
+        self.logs.clear()
         self._log("Agent started.")
-        time.sleep(1)
         self._log("Collecting data...")
-        time.sleep(1)
         self._log("Analyzing workflows...")
-        time.sleep(1)
         self._log("Automation complete.")
-        return self.logs
+        return list(self.logs)
 
-    def _log(self, message):
-        entry = f"[{self.name}] {message}"
-        print(entry)
-        self.logs.append(entry)
+    def _log(self, message: str) -> None:
+        self.logs.append(f"[{self.name}] {message}")
