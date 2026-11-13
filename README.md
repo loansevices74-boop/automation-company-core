@@ -1,30 +1,44 @@
 # B2B Automation Company Core
 
-Phase 1 foundation for a productized B2B automation service.
+Streamlit-based administrator console for a productized B2B automation service.
 
-## Current capabilities
+## Active application surface
 
-- Streamlit administrator console
-- SQLite-backed lead storage
-- Structured lead qualification
-- Approval-first outreach workflow boundary
-- Basic pipeline metrics
-- Unit tests for qualification and persistence
+- `app.py` — administrator dashboard
+- `core/` — SQLite lead storage and qualification
+- `marketing/engine.py` — marketing calendar and funnel metrics
+- `social_media/workflow.py` — approval-first social drafts
+- `orchestration/automation_plan.py` — recurring job definitions
+- `tests/` — automated tests
+
+The repository intentionally keeps live publishing, bulk outreach, payment processing, and production mutations behind explicit administrator approval and provider configuration.
 
 ## Run locally
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 python -m unittest discover -s tests -p 'test_*.py'
 ```
 
-Set `AUTOMATION_DB_PATH` to choose a different SQLite database location. Do not commit credentials or customer data.
+Windows PowerShell activation:
 
-## Initial plans
+```powershell
+.venv\\Scripts\\Activate.ps1
+```
+
+Set `AUTOMATION_DB_PATH` to choose a different SQLite location. Local databases, credentials, logs, and generated output are ignored by Git.
+
+## Commercial plans
 
 - Starter: $299/month
 - Growth: $799/month
 - Managed: $1,499/month
 
-These are commercial targets, not guaranteed revenue. Outreach, publishing, billing, refunds, and production changes require explicit administrator controls.
+These are pricing targets, not guaranteed revenue.
+
+## Cleanup note
+
+The active application no longer depends on the older pillar directories inherited from the original scaffold. They should be removed in a repository maintenance commit once a deletion-capable GitHub operation is available; no customer data or secrets should be stored there.
