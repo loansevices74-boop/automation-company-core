@@ -1,10 +1,15 @@
 import unittest
-from src.agents.ai_agent import AIAgent
+
+from agents.ai_agent import AIAgent
+
 
 class TestAIAgent(unittest.TestCase):
-    def test_run(self):
+    def test_run_returns_logs(self):
         agent = AIAgent()
-        self.assertIsNone(agent.run())
+        logs = agent.run()
+        self.assertIsInstance(logs, list)
+        self.assertTrue(logs)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
