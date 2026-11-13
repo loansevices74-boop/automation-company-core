@@ -1,10 +1,10 @@
+from datetime import date
+
 import streamlit as st
 
 from core.qualification import qualify_lead
 from core.store import Lead, LeadStore
 from marketing.engine import build_content_calendar, campaign_metrics
-from social_media.workflow import approve_draft, create_draft
-from datetime import date
 
 st.set_page_config(page_title="B2B Automation Company", layout="wide")
 st.title("B2B Automation Company")
@@ -57,7 +57,7 @@ if score_submitted:
 st.subheader("Automated marketing calendar")
 calendar = build_content_calendar(date.today(), 7)
 st.dataframe(calendar, use_container_width=True, hide_index=True)
-st.caption("All marketing content is generated as a draft and requires administrator approval before publication.")
+st.caption("Content is generated as a draft and requires administrator approval before publication.")
 
 st.subheader("Lead pipeline")
 if leads:
